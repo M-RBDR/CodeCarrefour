@@ -1,0 +1,32 @@
+---
+layout: default
+---
+
+<header>
+{% if site.theme_config.show_navbar == true %}
+  {% include horizontal_list.html collection=site.data.home.navbar_entries %}
+  <div class="dashed"></div>
+{% endif %}
+<h1>{{ site.title }}</h1>
+<h2 class="post-title">{{ page.title }}</h2>
+</header>
+
+{{ content }}
+
+{% if site.theme_config.show_projects == true %}
+  <h2>{{ site.theme_config.home.title_projects }}</h2>
+  {% include card_list.html collection=site.data.tutorials.programming_project_entries %}
+{% endif %}
+
+{% if site.theme_config.show_old_projects == true %}
+  <h2>{{ site.theme_config.home.title_old_projects }}</h2>
+  {% include card_list.html collection=site.data.tutorials.old_programming_project_entries %}
+{% endif %}
+
+
+{% if site.theme_config.show_footer == true %}
+  <footer>
+    <div class="dashed"></div>
+    {% include horizontal_list.html collection=site.data.home.footer_entries %}
+  </footer>
+{% endif %}
