@@ -2,7 +2,7 @@
 layout: tutorials
 author: MRBDR
 tags: [programmation, microstudio]
-permalink: /tutoriels/microstudio
+permalink: codecarrefour/tutoriels/microstudio
 ---
 
 Pour apprendre les fondements de la programmation informatique, nous allons utiliser MicroStudio et le langage de programmation Python.
