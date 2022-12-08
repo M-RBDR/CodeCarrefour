@@ -10,7 +10,7 @@ navbar_entries:
 
 project_entries:
   - title: microStudio
-    url: CodeCarrefour/tutoriels/microstudio
+    url: /tutoriels/microstudio
     desc: L'apprentissage de la programmation avec MicroStudio.
     highlight: Nouveau
 
