@@ -12,22 +12,18 @@ programming_project_entries:
   - title: 1-Le menu principal
     url: https://microstudio.dev/tutorial/MRBDR/menuprincipal/VG4BNWS9/
     desc: Introduction du menu principal de microStudio
-    highlight: Nouveau
 
   - title: 2-Fenêtre projet
     url: https://microstudio.dev/tutorial/MRBDR/2premierprojet/6EBWV8AZ/
     desc: La fenêtre projet dans microStudio
-    highlight: Nouveau
 
   - title: 3-Premier projet
     url: https://microstudio.dev/tutorial/MRBDR/3premierprojet/38FSPGXX/
     desc: Comment démarer un premier projet dans microStudio
-    hightlight: Nouveau
     
   - title: 4-Introduction à la programmation
     url: https://microstudio.dev/tutorial/MRBDR/4introductionalaprogrammation/YT7883JP/
     desc: Les premiers pas en programmation
-    hightlight: Nouveau
 
   - title: Les fonctions et les variables
     url: fonctions-variables
