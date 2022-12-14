@@ -24,6 +24,10 @@ programming_project_entries:
   - title: 4-Introduction à la programmation
     url: https://microstudio.dev/tutorial/MRBDR/4introductionalaprogrammation/YT7883JP/
     desc: Les premiers pas en programmation
+    
+  - title: 5-Les variables
+    url: https://microstudio.dev/tutorial/MRBDR/5lesvariables/CNPZYDNA/
+    desc: Comment définir et utiliser une variable dans vos programmes
 
   - title: Les fonctions et les variables
     url: fonctions-variables
