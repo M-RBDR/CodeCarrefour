@@ -2,7 +2,8 @@ title: CodeCarrefour
 author: M-RBDR
 url: https://m-rbdr.github.io/CodeCarrefour/ # root address of the site
 description: > # description of the site (multiple lines allowed)
-  Le club d'informatique de la Polyvalente Le Carrefour vise à encourager l'apprentissage de l'informatique libre auprès des jeunes.
+  Le club d'informatique de la Polyvalente Le Carrefour vise à encourager le développement de la citoyenneté numérique par 
+  l'apprentissage du logiciel libre et de l'informatique auprès des élèves de la polyvalente.
 
 permalink: /:slug
 
