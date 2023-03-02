@@ -1,8 +1,6 @@
 ---
-layout: post
-title: À propos
+layout: blog
+title: Blog
 ---
 
-This is an example page!
-
-Actually, it has the same layout of a post...
+ <iframe src="" title="Slugmaze"></iframe> 
