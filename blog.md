@@ -3,4 +3,4 @@ layout: blog
 title: Blog
 ---
 
- <iframe src="" title="Slugmaze"></iframe> 
+ <iframe src="./jeux/slugmaze" title="Slugmaze"></iframe> 
