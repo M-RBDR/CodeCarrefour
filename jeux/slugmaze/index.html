@@ -1,0 +1,506 @@
+<!DOCTYPE html><html><head><title>Lab Rat</title><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui=1"><meta charset="UTF-8"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="description" content=""><link rel="manifest" href="manifest.json"><link rel="icon" type="image/png" href="icon64.png"><link rel="apple-touch-icon" sizes="180x180" href="icon180.png"><link rel="icon" type="image/png" sizes="32x32" href="icon32.png"><link rel="icon" type="image/png" sizes="16x16" href="icon16.png"><style>html,body {
+  margin: 0;
+  padding: 0;
+  background-color: #000;
+  overflow:hidden;
+  font-family: Verdana;
+}
+.noselect {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+#canvaswrapper {
+  text-align: center ;
+}
+</style><style>@font-face { font-family: "BitCell" ; src: url("fonts/BitCell.ttf") format("truetype"); }</style><script>window.fonts = ["BitCell"]</script></head><body class="noselect custom-cursor" oncontextmenu="return false;"><div id="canvaswrapper"></div><script type="text/javascript">var resources = {"images":[{"file":"boss.png","version":157,"size":475,"properties":{"frames":1,"fps":5}},{"file":"broken_floor.png","version":67,"size":360,"properties":{"frames":1,"fps":5}},{"file":"enemy.png","version":97,"size":419,"properties":{"frames":1,"fps":5}},{"file":"floor_both_sides_bottom.png","version":5,"size":459,"properties":{"frames":1,"fps":5}},{"file":"floor_bottom.png","version":40,"size":403,"properties":{"frames":1,"fps":5}},{"file":"floor_bottom_left.png","version":150,"size":411,"properties":{"frames":1,"fps":5}},{"file":"floor_bottom_right.png","version":3,"size":434,"properties":{"frames":1,"fps":5}},{"file":"floor_center.png","version":8,"size":434,"properties":{"frames":1,"fps":5}},{"file":"floor_left.png","version":26,"size":444,"properties":{"frames":1,"fps":5}},{"file":"floor_left_right.png","version":5,"size":444,"properties":{"frames":1,"fps":5}},{"file":"floor_right.png","version":3,"size":446,"properties":{"frames":1,"fps":5}},{"file":"floor_top.png","version":4,"size":390,"properties":{"frames":1,"fps":5}},{"file":"floor_top_bottom.png","version":21,"size":388,"properties":{"frames":1,"fps":5}},{"file":"floor_top_left.png","version":2,"size":414,"properties":{"frames":1,"fps":5}},{"file":"floor_top_right.png","version":4,"size":425,"properties":{"frames":1,"fps":5}},{"file":"gameover.png","version":38,"size":896,"properties":{"frames":1,"fps":5}},{"file":"goal.png","version":78,"size":452,"properties":{"frames":1,"fps":5}},{"file":"icon.png","version":33,"size":480,"properties":{"frames":1,"fps":5}},{"file":"key.png","version":26,"size":442,"properties":{"frames":2,"fps":2}},{"file":"key_hole.png","version":64,"size":344,"properties":{"frames":1,"fps":5}},{"file":"no_key.png","version":27,"size":320,"properties":{"frames":1,"fps":5}},{"file":"player_down.png","version":5,"size":428,"properties":{"frames":3,"fps":5}},{"file":"player_fall.png","version":54,"size":984,"properties":{"frames":4,"fps":2}},{"file":"player_left.png","version":5,"size":390,"properties":{"frames":3,"fps":5}},{"file":"player_right.png","version":359,"size":610,"properties":{"frames":3,"fps":5}},{"file":"player_up.png","version":5,"size":439,"properties":{"frames":3,"fps":5}},{"file":"robot.png","version":149,"size":997,"properties":{"frames":7,"fps":2}},{"file":"sprite2.png","version":85,"size":296,"properties":{"frames":2,"fps":2}},{"file":"sprite_1.png","version":113,"size":516,"properties":{"frames":1,"fps":5}},{"file":"void.png","version":3,"size":186,"properties":{"frames":1,"fps":5}},{"file":"void_light.png","version":23,"size":100,"properties":{"frames":1,"fps":5}},{"file":"wall_both_sides.png","version":4,"size":326,"properties":{"frames":1,"fps":5}},{"file":"wall_bottom.png","version":3,"size":331,"properties":{"frames":1,"fps":5}},{"file":"wall_bottom_both_sides.png","version":3,"size":329,"properties":{"frames":1,"fps":5}},{"file":"wall_center.png","version":58,"size":335,"properties":{"frames":1,"fps":5}},{"file":"wall_corner_left.png","version":3,"size":336,"properties":{"frames":1,"fps":5}},{"file":"wall_corner_right.png","version":3,"size":337,"properties":{"frames":1,"fps":5}},{"file":"wall_corner_top_left.png","version":3,"size":332,"properties":{"frames":1,"fps":5}},{"file":"wall_corner_top_right.png","version":3,"size":343,"properties":{"frames":1,"fps":5}},{"file":"wall_left.png","version":3,"size":330,"properties":{"frames":1,"fps":5}},{"file":"wall_right.png","version":3,"size":330,"properties":{"frames":1,"fps":5}},{"file":"wall_solo.png","version":3,"size":326,"properties":{"frames":1,"fps":5}},{"file":"wall_top.png","version":2,"size":322,"properties":{"frames":1,"fps":5}},{"file":"wall_top_both_sides.png","version":4,"size":314,"properties":{"frames":1,"fps":5}},{"file":"wall_top_bottom.png","version":14,"size":317,"properties":{"frames":1,"fps":5}},{"file":"wall_top_bottom_left.png","version":3,"size":330,"properties":{"frames":1,"fps":5}},{"file":"wall_top_bottom_right.png","version":2,"size":332,"properties":{"frames":1,"fps":5}}],"assets":[],"maps":{"map":"{\"width\":16,\"height\":8,\"block_width\":16,\"block_height\":16,\"sprites\":[0,\"floor_bottom_left\",\"floor_bottom_right\",\"floor_top_left\",\"floor_top_right\"],\"data\":[1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4]}","maze_1":"{\"width\":16,\"height\":8,\"block_width\":16,\"block_height\":16,\"sprites\":[0,\"floor_bottom_left\",\"floor_top_bottom\",\"floor_bottom_right\",\"wall_corner_top_left\",\"wall_top\",\"wall_center\",\"floor_left_right\",\"wall_top_bottom_left\",\"wall_top_bottom\",\"wall_corner_right\",\"floor_top_left\",\"wall_both_sides\",\"wall_left\",\"wall_top_both_sides\",\"wall_top_bottom_right\",\"wall_bottom\",\"floor_both_sides_bottom\",\"floor_center\",\"floor_top_right\",\"wall_right\",\"wall_corner_left\",\"wall_corner_top_right\",\"floor_left\",\"floor_bottom\",\"no_key\",\"goal\",\"floor_top\",\"floor_right\"],\"data\":[1,2,2,2,2,2,2,2,3,4,5,6,5,5,5,5,7,8,9,9,9,9,9,10,11,2,3,12,1,2,2,3,11,2,2,2,2,2,3,13,9,10,7,14,7,8,15,7,16,9,9,9,9,15,7,12,17,12,11,2,18,2,2,19,20,1,2,2,2,2,19,12,7,4,9,10,7,21,9,9,20,7,8,9,9,9,9,22,23,24,25,12,7,14,26,17,20,11,2,2,2,2,2,2,27,27,19,12,23,24,18,28,6,16,16,16,16,16,16,16,16,16,16,20,11,27,27,19]}","maze_2":"{\"width\":16,\"height\":8,\"block_width\":16,\"block_height\":16,\"sprites\":[0,\"floor_bottom_left\",\"floor_bottom\",\"floor_top_bottom\",\"floor_bottom_right\",\"wall_both_sides\",\"goal\",\"floor_left\",\"floor_right\",\"no_key\",\"floor_top_left\",\"floor_top_right\",\"floor_top\",\"wall_bottom_both_sides\",\"wall_top_bottom_left\",\"wall_top_bottom\",\"wall_right\",\"floor_left_right\",\"wall_top_bottom_right\",\"wall_corner_top_left\",\"floor_center\",\"wall_left\",\"wall_top\",\"wall_center\",\"wall_bottom\"],\"data\":[1,2,3,2,4,5,1,6,1,2,3,2,2,2,2,4,7,8,9,10,11,5,7,12,12,8,13,10,12,12,12,11,7,8,14,15,15,16,17,14,18,17,19,15,15,15,15,13,10,20,2,2,4,5,7,2,2,20,3,2,2,2,4,21,13,7,12,20,8,5,10,12,12,11,13,10,12,12,8,21,16,17,13,7,8,19,15,15,15,15,22,15,15,18,17,21,16,17,5,10,12,3,3,3,3,3,3,3,3,3,11,21,23,24,23,24,24,24,24,24,24,24,24,24,24,24,24,24]}","maze_3":"{\"width\":16,\"height\":8,\"block_width\":16,\"block_height\":16,\"sprites\":[0,\"floor_bottom_left\",\"floor_bottom\",\"floor_bottom_right\",\"wall_both_sides\",\"wall_top_both_sides\",\"floor_top_bottom\",\"floor_top_left\",\"floor_top\",\"floor_center\",\"floor_right\",\"floor_left\",\"wall_solo\",\"floor_left_right\",\"wall_top_bottom_left\",\"wall_top_bottom\",\"wall_corner_right\",\"wall_top_bottom_right\",\"wall_bottom_both_sides\",\"no_key\",\"goal\",\"floor_top_right\",\"wall_left\",\"wall_corner_top_left\",\"wall_top\",\"wall_corner_top_right\"],\"data\":[1,2,2,2,2,2,3,4,1,3,5,1,2,6,3,4,7,8,8,8,8,9,10,4,11,9,2,9,10,12,13,4,14,15,15,15,16,11,10,4,7,9,9,9,9,2,10,4,1,6,2,3,4,11,10,4,17,13,18,11,9,9,10,4,13,19,11,10,5,11,10,5,1,10,4,11,8,9,10,4,7,2,9,9,2,9,9,6,9,10,4,7,20,11,10,4,18,7,8,8,8,8,21,18,7,21,22,16,7,8,21,4,23,15,15,15,15,15,15,17,15,15,24,24,15,15,15,25]}","maze_4":"{\"width\":16,\"height\":8,\"block_width\":16,\"block_height\":16,\"sprites\":[0,\"void\",\"void_light\",\"wall_both_sides\",\"goal\",\"wall_left\",\"wall_top_both_sides\",\"broken_floor\",\"wall_top_bottom\",\"wall_top_bottom_right\",\"floor_top_bottom\",\"wall_corner_left\",\"wall_bottom\",\"wall_corner_right\"],\"data\":[1,1,1,1,1,1,1,2,3,2,1,1,2,3,4,5,2,2,2,1,1,1,1,2,3,2,1,1,2,6,7,5,8,9,2,2,2,2,2,2,3,2,1,1,2,2,7,2,10,7,7,7,7,7,7,7,3,2,1,1,1,2,7,2,8,9,2,2,2,2,2,7,6,2,1,1,1,2,7,2,2,2,2,1,1,1,2,7,2,2,2,2,2,2,7,5,1,1,1,1,1,2,2,7,7,7,7,7,7,7,7,5,1,1,1,1,1,2,11,12,13,2,2,2,2,2,2,5]}"},"sounds":[{"file":"collect.wav","version":1,"size":9669,"properties":{}},{"file":"gameoversound.wav","version":1,"size":55042,"properties":{}},{"file":"open.wav","version":1,"size":10288,"properties":{}},{"file":"restartsound.wav","version":1,"size":32549,"properties":{}}],"music":[{"file":"gameovermusic.mp3","version":1,"size":648545,"properties":{}}]};
+var graphics = "M1";
+
+</script><script type="text/javascript">var orientation = 'landscape' ;
+var aspect = '2x1' ;
+var ms_libs = [] ;
+window.skip_service_worker = true;
+window.exported_project = true;
+window.ms_use_server = false ;
+</script><script src="compiler.js"></script><script src="parser.js"></script><script src="processor.js"></script><script src="program.js"></script><script src="routine.js"></script><script src="runner.js"></script><script src="token.js"></script><script src="tokenizer.js"></script><script src="transpiler.js"></script><script src="microengine.js"></script></body><script type="text/javascript">//
+//
+// The game is started with the code below.
+// Once you have received the "started" signal (see below),
+// you can do the following:
+// 1) Inject functions or objects into the global context of the microStudio engine, example:
+//
+//   window.player.setGlobal("special_callback",function(x) { console.info(x) }) ;
+//   // Your microScript code can now call the "special_callback" function
+//
+// 2) Call microScript global functions from your JavaScript code, example:
+//
+//   window.player.call("call_me_from_javascript",[10,1000]) ;
+//   // arguments to the function call are provided as an array
+//
+// 3) Run a microScript code snippet from your JavaScript code, example:
+//
+//   window.player.exec("player.position_x = 50",function(result) { console.log(result) ; }) ;
+//
+
+window.addEventListener("load",function() {
+  window.player = new Player(function(event) {
+    if (event.name == "started") {
+      // signal that the game is started
+    }
+    else if (event.name == "log") {
+      // console.info(event.data) ;
+    }
+  }) ;
+  document.body.focus() ;
+}) ;
+
+</script><script id="code" type="text/x-microscript">
+
+
+function()
+/*Plat = class
+  constructor = function(x, y, sprite)
+    this.x = x
+    this.y = y
+    this.sprite = sprite 
+  end
+
+  tombe = function()
+    position += vitesse
+  end
+
+  affiche = function(dommages)
+    pv -= dommages
+  end
+end
+
+plateform1 = Plat(60, 40, "bleu")
+plateform1.x
+
+trouver_noms_de_thuile = function(carte_nom, grandeur_thuile_x, grandeur_thuile_y)
+  // Donne le nom et les coordonées dans le spritesheet des tuiles d'un niveau.
+  // Retourne: le nom de la tuile suivi des coordonnées dans le spritesheet."""
+  if (maps[carte_nom].get(grandeur_thuile_x, grandeur_tuile_y) == broken)
+    plateforme = Plat(tuile_x, tuile_y, "broken")
+    plateformes.append(plateforme)
+  end
+end
+*/
+end()
+
+
+
+function()
+level_1 = function()
+  lol = 1
+  animation = "player_up.0"
+  right_value = 0
+  key = 0
+  key_x = 62.5
+  key_y = 37.5
+  key_tile_x = 10
+  key_tile_y = 5
+  key_hole = 1
+  key_hole_x = 112.5
+  key_hole_y = 37.5
+  key_hole_tile_x = 12
+  key_hole_tile_y = 5
+  goal_tile_x = 14
+  goal_tile_y = 5
+  left_value = 0
+  up_value = 0
+  down_value = 0
+  enemy_value = 0
+  enemy_speed = 5
+  enemy_x = -200
+  enemy_y = -200
+  enemy_tile_x = -200
+  enemy_tile_y = -200
+  player_x = 12.5
+  player_y = -12.5
+  player_tile_x = 8
+  player_tile_y = 3
+  game_over = 0
+  timer = 0
+end
+end()
+
+
+
+function()
+level_2 = function()
+  lol = 2
+  animation = "player_down.0"
+  right_value = 0
+  key = 0
+  key_x = -137.5
+  key_y = -62.5
+  key_tile_x = 2
+  key_tile_y = 1
+  key_hole = 1
+  key_hole_x = -37.5
+  key_hole_y = -37.5
+  key_hole_tile_x = 6
+  key_hole_tile_y = 2
+  goal_tile_x = 7
+  goal_tile_y = 0
+  left_value = 0
+  up_value = 0
+  down_value = 0
+  enemy_value = 0
+  enemy_speed = 5
+  enemy_x = 37.5
+  enemy_y = -62.5
+  enemy_tile_x = 9
+  enemy_tile_y = 1
+  player_x = -162.5
+  player_y = 62.5
+  player_tile_x = 1
+  player_tile_y = 6
+  game_over = 0
+  timer = 0
+end
+end()
+
+
+
+function()
+level_3 = function()
+  lol = 3
+  animation = "player_right.0"
+  right_value = 0
+  key = 0
+  key_x = -162.5
+  key_y = 12.5
+  key_tile_x = 1
+  key_tile_y = 4
+  key_hole_x = -12.5
+  key_hole_y = 37.5
+  key_hole = 1
+  key_hole_tile_x = 7
+  key_hole_tile_y = 5
+  goal_tile_x = 12
+  goal_tile_y = 5
+  left_value = 0
+  up_value = 0
+  down_value = 0
+  enemy_value = 0
+  enemy_speed = 5
+  enemy_x = 87.5
+  enemy_y = -12.5
+  enemy_tile_x = 11
+  enemy_tile_y = 3
+  player_x = -137.5
+  player_y = -87.5
+  player_tile_x = 2
+  player_tile_y = 0
+  game_over = 0
+  timer = 0
+end
+
+end()
+
+
+
+function()
+level_4 = function()
+  broken_timer = 0
+  fall_timer = 0
+  lol = 4
+  ani_timer = 0
+  animation = "player_right.0"
+  right_value = 0
+  key = 0
+  key_x = 500
+  key_y = 500
+  key_tile_x = 500
+  key_tile_y = 500
+  key_hole_x = 500
+  key_hole_y = 500
+  key_hole = 0
+  key_hole_tile_x = 500
+  key_hole_tile_y = 500
+  goal_tile_x = 14
+  goal_tile_y = 5
+  left_value = 0
+  up_value = 0
+  down_value = 0
+  enemy_value = 0
+  enemy_speed = 5
+  enemy_x = 500
+  enemy_y = 500
+  enemy_tile_x = 500
+  enemy_tile_y = 500
+  player_x = -187.5
+  player_y = -12.5
+  player_tile_x = 0
+  player_tile_y = 3
+  game_over = 0
+  timer = 0
+end
+
+
+end()
+
+
+
+function()
+init = function()
+  lev_num = 1
+  level = level_1()
+  if lev_num == 1 then 
+    maze = "maze_1"
+    level = level_1()
+  end
+  if lev_num == 2 then
+    maze = "maze_2"
+    level = level_2()
+  end
+  if lev_num == 3 then
+    maze = "maze_3"
+    level = level_3()
+  end
+  if lev_num == 4 then
+    maze = 'maze_4'
+    level = level_4()
+  end
+end
+
+update = function()
+  
+  //tile values
+  wall = ["wall_both_sides", "wall_bottom", "wall_bottom_both_sides", "wall_center", "wall_corner_right", "wall_corner_top_right", "wall_corner_top_left", "wall_left", "wall_right", "wall_solo", "wall_top", "wall_top_both_sides", "wall_top_bottom", "wall_top_bottom", "wall_top_bottom_right", "wall_top_bottom_left", "wall_corner_left"]
+  gameovermusic = audio.playMusic("gameovermusic")
+  timer += 1
+  
+  player_tile = maps[maze].get(player_tile_x, player_tile_y)
+  tile_right = maps[maze].get(player_tile_x + 1, player_tile_y)
+  tile_left = maps[maze].get(player_tile_x - 1, player_tile_y)
+  tile_up = maps[maze].get(player_tile_x, player_tile_y + 1)
+  tile_down = maps[maze].get(player_tile_x, player_tile_y - 1)
+  
+  enemy_tile_right = maps[maze].get(enemy_tile_x + 1, enemy_tile_y)
+  enemy_tile_left = maps[maze].get(enemy_tile_x - 1, enemy_tile_y)
+  enemy_tile_up = maps[maze].get(enemy_tile_x, enemy_tile_y + 1)
+  enemy_tile_down = maps[maze].get(enemy_tile_x, enemy_tile_y - 1)
+  
+  
+  //movement
+  if keyboard.press.RIGHT and left_value == 0 and up_value == 0 and down_value == 0 and wall.contains(tile_right) == 0 and tile_right != 0 then
+    right_value = 1
+    enemy_value = 1
+  end
+  if keyboard.press.LEFT and right_value == 0 and up_value == 0 and down_value == 0 and wall.contains(tile_left) == 0 and tile_left != 0  then
+    left_value = 1
+    enemy_value = 1
+  end
+  if keyboard.press.UP and left_value == 0 and right_value == 0 and down_value == 0 and wall.contains(tile_up) == 0 and tile_up != 0 then
+    up_value = 1
+    enemy_value = 1
+  end
+  if keyboard.press.DOWN and left_value == 0 and right_value == 0 and up_value == 0 and wall.contains(tile_down) == 0 and tile_down != 0 then
+    down_value = 1
+    enemy_value = 1
+  end
+  
+  //enemy movement
+  if enemy_value == 1 and enemy_speed == 5 and wall.contains(enemy_tile_left) == 0 then
+    enemy_x -= 5
+    if enemy_x % 25 == 12.5 or enemy_x % 25 == -12.5 then
+      enemy_tile_x -= 1
+    end
+  elsif wall.contains(enemy_tile_left) == 1 and right_value == 0 and left_value == 0 and up_value == 0 and down_value == 0 then
+    enemy_speed = -5
+    enemy_value = 0
+
+  end
+
+  if enemy_value == 1 and enemy_speed == -5 and wall.contains(enemy_tile_right) == 0 then
+    enemy_x += 5
+    if enemy_x % 25 == 12.5 or enemy_x % 25 == -12.5 then
+      enemy_tile_x += 1
+    end
+  elsif wall.contains(enemy_tile_right) == 1 and right_value == 0 and left_value == 0 and up_value == 0 and down_value == 0 then
+    enemy_speed = 5
+    enemy_value = 0
+  end
+  
+  //player movement
+  if right_value == 1 and wall.contains(tile_right) == 0 then
+    player_x += 3.125
+    animation = "player_right"
+    if player_x % 25 == 12.5 or player_x % 25 == -12.5 then
+      player_tile_x += 1
+
+    end
+  elsif wall.contains(tile_right) == 1 then
+    right_value = 0
+    
+  end
+  
+  
+  
+  if left_value == 1 and wall.contains(tile_left) == 0 then
+    player_x -= 3.125
+    animation = "player_left"
+    if player_x % 25 == -12.5 or player_x % 25 == 12.5 then
+      player_tile_x -= 1
+      
+
+    end
+  elsif wall.contains(tile_left) == 1 then
+    left_value = 0
+
+
+  end
+  
+  if up_value == 1 and wall.contains(tile_up) == 0 then
+    player_y += 3.125
+    animation = "player_up"
+    if player_y % 25 == 12.5 or player_y % 25 == -12.5 then
+      player_tile_y += 1
+
+
+    end
+  elsif wall.contains(tile_up) == 1 then
+     up_value = 0
+
+ 
+  end
+  
+  if down_value == 1 and wall.contains(tile_down) == 0 then
+    player_y -= 3.125
+    animation = "player_down"
+    if player_y % 25 == 12.5 or player_y % 25 == -12.5 then
+      player_tile_y -= 1
+
+
+    end
+  elsif wall.contains(tile_down) == 1 then
+     down_value = 0
+
+  end
+  //map border
+  if player_x <= -187.5 then
+    player_x = -187.5
+    left_value = 0
+  elsif player_x >= 187.5 then
+    player_x = 187.5
+    right_value = 0
+  end
+  if player_y <= -87.5 then
+    player_y = -87.5
+    down_value = 0
+  elsif player_y >= 87.5 then
+    player_y = 87.5
+    up_value = 0
+  end
+  
+  
+  //sounds
+  if player_tile_x == enemy_tile_x and player_tile_y == enemy_tile_y then
+     game_over = 1
+     audio.playSound( "gameoversound", 0.5, 1, 0, 0 )
+     song = timer
+  end
+  if game_over == 1 and song <= timer - 420 then
+    audio.playMusic( "gameovermusic", 1, 1)
+  else
+    gameovermusic.stop()
+  end
+  
+  //levels
+  if keyboard.press.R and lev_num == 1 then
+    level_1()
+  elsif keyboard.press.R and lev_num == 2 then
+    level_2()
+  elsif keyboard.press.R and lev_num == 3 then
+    level_3()
+  end
+  if player_tile_x == key_tile_x and player_tile_y == key_tile_y then
+    key = 1
+    audio.playSound( "collect", 0.5, 1, 0, 0 )
+  end
+  if player_tile_x == key_hole_tile_x and player_tile_y == key_hole_tile_y and key == 1 and key_hole == 1 then
+    key_hole = 0
+    audio.playSound( "open", 0.5, 1, 0, 0 )
+  end
+  if key_hole == 0 then
+    key = 2
+  end
+  if player_tile_x == goal_tile_x and player_tile_y == goal_tile_y and lol == 1 then
+    maze = "maze_2"
+    lev_num = 2
+    level = level_2()
+  end
+  if player_tile_x == goal_tile_x and player_tile_y == goal_tile_y  and lol == 2 then
+    level = level_3()
+    maze = "maze_3"
+    lev_num = 3
+  end
+  if player_tile_x == goal_tile_x and player_tile_y == goal_tile_y and lol == 3 then
+    level = level_4()
+    maze =  'maze_4'
+    lev_num = 4
+  end
+  
+  if player_tile == 'void' or player_tile == 'void_light' then
+    ani_timer += 1
+    if ani_timer >= 0 and ani_timer <= 10 then
+      animation = 'player_fall.0'
+    elsif ani_timer >= 11 and ani_timer <= 20 then
+      animation = 'player_fall.1'
+    elsif ani_timer >= 21 and ani_timer <= 30 then
+      animation = 'player_fall.2'
+    elsif ani_timer >= 31 and ani_timer <= 39 then
+      animation = 'player_fall.3'
+    end
+    fall_timer += 1
+    right_value = 0
+    left_value = 0
+    up_value = 0
+    down_value = 0
+    if fall_timer % 40 == 0 then
+      level = level_4()
+    end
+  end
+  
+  //falling floors
+  if player_tile == 'broken_floor' then
+    broken_timer += 1
+    
+  end
+  
+  
+  
+  
+end
+
+draw = function()
+  if game_over == 0 then
+    screen.drawMap(maze, 0,0, 400, 200)
+    if key == 0 then
+      screen.drawSprite("key", key_x, key_y, 25)
+    elsif key == 1 then
+      screen.drawSprite("key", 162.5, 87.5, 15)
+    end
+    if key_hole == 1 then
+      screen.drawSprite("key_hole", key_hole_x, key_hole_y, 25)
+    end
+    screen.drawSprite("enemy", enemy_x, enemy_y, 25)
+    screen.drawSprite(animation, player_x, player_y, 25)
+  elsif game_over == 1 then
+    screen.drawSprite("gameover", 0,0, 400, 200)
+    screen.drawText( "Press R", 0, -75, 50, "rgb(255,255,255)" )
+  end
+  
+end
+
+
+end()
+
+
+</script></html>
